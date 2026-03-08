@@ -1,0 +1,6 @@
+asset,sector,return,risk,volatility
+Apple,Technology,0.15,0.10,0.20
+Tesla,Automotive,0.18,0.15,0.25
+Microsoft,Technology,0.12,0.09,0.18
+Amazon,Technology,0.14,0.11,0.22
+Ford,Automotive,0.09,0.13,0.27

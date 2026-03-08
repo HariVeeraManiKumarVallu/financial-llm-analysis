@@ -1,0 +1,10 @@
+model:
+  embedding_model: all-MiniLM-L6-v2
+  llm_provider: gemini
+  llm_model: gemini-flash-latest
+  project_name: projects/938832235755
+  project_number: 938832235755
+
+data:
+  raw_path: data/raw/financial_data.csv
+  processed_path: data/processed/cleaned_financial_data.csv

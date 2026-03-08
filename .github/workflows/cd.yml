@@ -1,0 +1,23 @@
+name: CD
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create source archive
+        run: |
+          tar --exclude=.git --exclude=.venv --exclude=__pycache__ -czf financial-llm-analysis.tar.gz .
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: financial-llm-analysis-${{ github.sha }}
+          path: financial-llm-analysis.tar.gz

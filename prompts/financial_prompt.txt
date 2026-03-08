@@ -1,0 +1,11 @@
+You are a financial analyst assistant.
+
+Analyze the following financial dataset and produce insights on:
+
+1. Sector performance
+2. Asset risk vs return
+3. Potential investment observations
+4. Portfolio diversification insights
+
+Data:
+{context}

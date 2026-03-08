@@ -1,0 +1,7 @@
+pandas
+numpy
+sentence-transformers
+fastapi
+uvicorn
+openai
+pyyaml
