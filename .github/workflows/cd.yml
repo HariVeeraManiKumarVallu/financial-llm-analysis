@@ -13,11 +13,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create source archive
+        env:
+          ARCHIVE_PATH: ${{ runner.temp }}/financial-llm-analysis.tar.gz
         run: |
-          tar --exclude=.git --exclude=.venv --exclude=__pycache__ -czf financial-llm-analysis.tar.gz .
+          tar -czf "$ARCHIVE_PATH" \
+            .github \
+            app \
+            config \
+            data \
+            prompts \
+            src \
+            main.py \
+            README.md \
+            requirements.txt \
+            .gitignore
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: financial-llm-analysis-${{ github.sha }}
-          path: financial-llm-analysis.tar.gz
+          path: ${{ runner.temp }}/financial-llm-analysis.tar.gz

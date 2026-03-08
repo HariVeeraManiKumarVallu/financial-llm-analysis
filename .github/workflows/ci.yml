@@ -17,10 +17,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.12"
 
-      - name: Compile Python files
+      - name: Syntax check
         run: |
-          python -m py_compile main.py
-          python -m py_compile app/api_server.py
-          python -m py_compile src/*.py
+          python -m compileall -q main.py app src
